@@ -1,0 +1,21 @@
+extends ./components/_layout.pug
+
+block vars
+	- const pageTitle = 'Page list'
+
+block content_block
+	-
+		const pages = [
+			'index',
+			'blog',
+			'contacts'
+		]
+
+	style.
+		.header-main, .footer-main{display: none;}
+		ol{max-width: 1400px;padding: 0 15px;margin: 0 auto;margin-top: 50px;}
+		a{color: #333;font-size: 20px;}
+		a:visited{color: #ababab;}
+	ol
+		each page in pages
+			li: a(href=`./${page}.html`, target="_blank") #{page}

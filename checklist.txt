@@ -1,0 +1,6 @@
+Шрифты, фавикон
+Оптимизировать изображения
+Адаптив
+Кроссбраузерность (phone, Opera, FifeFox, Edge)
+W3C validator
+Google PageSpeed

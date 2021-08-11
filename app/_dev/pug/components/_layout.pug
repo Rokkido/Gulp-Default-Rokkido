@@ -1,0 +1,20 @@
+include ./_mixins
+
+block vars
+
+<!-- Telegram: @rokkido -->
+
+doctype
+html(lang=lang)
+	head
+		+head()
+	body
+		.page-container(class=pageClass)
+			main
+				include ./parts/header.pug
+				block content_block
+
+			include ./parts/footer.pug
+		+scripts()
+
+<!-- Telegram: @rokkido -->

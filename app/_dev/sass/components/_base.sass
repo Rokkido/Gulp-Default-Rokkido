@@ -1,0 +1,216 @@
+@import '_vars'
+
+// Font weight helper
+// 100 - Thin (Hairline)
+// 200 - Extra Light (Ultra Light)
+// 300 - Light
+// 400 - Normal
+// 500 - Medium
+// 600 - Semi Bold (Demi Bold)
+// 700 - Bold
+// 800 - Extra Bold (Ultra Bold)
+// 900 - Black (Heavy)
+
+// Font Family (only ttf)
++ff("Roboto", "RobotoRegular", 400)
+
+
+// Base
+*,
+*::before,
+*::after
+	box-sizing: border-box
+	outline: none
+
+::selection
+	color: #fff
+	background-color: $accent
+
+::placeholder
+	color: #666
+
+h1, h2, h3, h4, h5, h6, p, ul, button
+	margin: 0
+	padding: 0
+
+input, textarea
+	display: block
+	width: 100%
+
+textarea
+	resize: none
+
+button
+	border: none
+	background-color: transparent
+	cursor: pointer
+
+a
+	color: inherit
+	text-decoration: none
+
+li
+	list-style-type: none
+
+html
+	background-color: #ffffff
+	height: fill-available
+
+body
+	position: relative
+	overflow-x: hidden
+	min-width: 320px
+	font-size: $fontSize
+	line-height: $lineHeight
+	color: $textColor
+	font-family: $font
+	font-weight: $fontWeight
+
+.container
+	max-width: $containerWidth
+	padding: 0 $gutter
+	margin: 0 auto
+	+mq($containerWidthNumb)
+		max-width: 992px
+	+mq(992)
+		max-width: 768px
+
+.flex
+	display: flex
+	flex-wrap: wrap
+
+.grid
+	display: grid
+
+.btn
+	text-decoration: none
+	border: none
+	padding: 0
+	background-color: transparent
+	color: inherit
+	cursor: pointer
+	display: inline-flex
+	justify-content: center
+	align-items: center
+	transition: .25s
+
+	width: 150px
+	height: 40px
+	background-color: #333
+	color: #fff
+	&--accent
+		background-color: $accent
+		&:hover
+			background-color: lighten($accent, 5%)
+
+h1
+	font-size: 40px
+h2
+	font-size: 30px
+
+.page-container
+	display: grid
+	grid-template-columns: 1fr
+	grid-template-rows: 1fr auto
+	min-height: 100vh
+	padding-top: $headerHeight
+	+mq(992)
+		min-height: fill-available
+		padding-top: $headerHeightMob
+	header.header-main
+		position: fixed
+		top: 0
+		left: 0
+		right: 0
+		z-index: 99
+		background-color: #fff
+		box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.15)
+		.grid
+			align-items: center
+			height: $headerHeight
+			grid-template-columns: 1fr auto
+			+mq(992)
+				height: $headerHeightMob
+			.logo-wrap
+				font-size: 0
+				a
+					img
+			nav
+				+mq(992)
+					position: fixed
+					top: 0
+					right: 0
+					background-color: #fff
+					width: 100%
+					max-width: 300px
+					bottom: 0
+					box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.15)
+					padding-top: 50px
+					padding-bottom: 15px
+					transition: .5s
+					+move(100%, 0)
+					&.active
+						+move(0)
+				ul
+					display: grid
+					grid-auto-flow: column
+					grid-gap: 30px
+					overflow: auto
+					height: 100%
+					+mq(992)
+						padding: 0 15px
+						text-align: center
+						grid-auto-flow: row
+						grid-auto-rows: minmax(min-content, max-content)
+					li
+						list-style-type: none
+						a
+							text-decoration: none
+							transition: .25s
+							&:hover, &.active
+								color: $accent
+			.menu-wrap
+				pointer-events: auto
+				position: relative
+				display: none
+				+mq(992)
+					display: block
+				button.menu
+					display: block
+					border: none
+					width: 32px
+					height: 25px
+					position: relative
+					background-color: transparent
+					&.active
+						span
+							&:nth-child(1)
+								top: 50%
+								transform: translate(0, -50%) rotate(180deg)
+								opacity: 0
+							&:nth-child(2)
+								transform: translate(0, -50%) rotate(-45deg)
+							&:nth-child(3)
+								top: 50%
+								transform: translate(0, -50%) rotate(45deg)
+					span
+						display: block
+						position: absolute
+						height: 3px
+						background-color: #000
+						left: 0
+						right: 0
+						transition: .25s ease
+						&:nth-child(1)
+							top: 0
+						&:nth-child(2)
+							top: 50%
+							transform: translate(0, -50%)
+						&:nth-child(3)
+							bottom: 0
+
+	footer.footer-main
+
+
+
+
