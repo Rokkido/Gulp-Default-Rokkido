@@ -15,7 +15,7 @@ const gulpif        = require('gulp-if')
 const qrcode        = require('qrcode-terminal')
 const rename        = require('gulp-rename');
 
-const allMinify = true // минифицировать все файлы
+const allMinify = false // минифицировать все файлы
 
 
 
